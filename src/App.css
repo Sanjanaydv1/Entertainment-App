@@ -1,38 +1,183 @@
-.App {
+/* General Reset */
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  background-color: #10141e;
+  color: #ffffff;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 10px 90px;
+  padding: 5px 0;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #ffffff;
+}
+
+/* Grid for Media Cards */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Media Card */
+.media-card {
+  position: relative; /* Position relative for absolute positioning of text */
+  width: 200px; /* Set a width slightly larger than height for a square shape */
+  height: 180px; /* Set height to create a square-like aspect ratio */
+  margin: 10px; /* Reduce gap between media cards */
+  overflow: hidden; /* Hide overflow to keep the image within the card */
+  border-radius: 8px; /* Optional: add rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+}
+
+.media-thumbnail {
+  width: 100%; /* Make the image cover the entire card */
+  height: 100%; /* Make the image cover the entire card */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.media-card-info {
+  position: absolute; /* Position text over the image */
+  bottom: 0; /* Align text to the bottom */
+  left: 0; /* Align text to the left */
+  right: 0; /* Align text to the right */
+  background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for readability */
+  color: white; /* Text color */
+  padding: 10px; /* Padding around the text */
+}
+
+.media-category,
+.media-title,
+.media-rating {
+  display: block; /* Ensure each piece of text is on a new line */
+  margin: 0; /* Remove default margin */
+}
+
+.bookmark-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.bookmark-btn:hover {
+  opacity: 0.7;
+}
+/* Loading & Error States */
+.loading,
+.error {
   text-align: center;
+  font-size: 1.2rem;
+  color: #fc4747;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Sidebar Styling */
+.sidebar {
+  position: fixed; /* Fixes sidebar to the left of the screen */
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full viewport height */
+  width: 80px; /* Sidebar width */
+  background-color: #161d2f; /* Dark background color */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ /* Space between top and bottom sections */
+  padding: 20px 0;
+  z-index: 10; /* Ensures the sidebar stays on top */
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar .logo {
+  width: 35px; /* Logo and icons sizing */
+  margin-bottom: 20px; /* Spacing for the logo at the top */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar .nav-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Spacing between navigation icons */
 }
+
+.sidebar .nav-icons .FontAwesomeIcon {
+  width: 20px; /* Size of navigation icons */
+  cursor: pointer; /* Makes icons clickable */
+  transition: opacity 0.3s ease; /* Adds a hover effect */
+}
+
+.sidebar .nav-icons img:hover {
+  opacity: 0.7; /* Reduces opacity on hover for a soft effect */
+}
+
+.sidebar .profile {
+  width: 40px;
+  height: 40px;
+  margin-top: 340px;
+  border-radius: 50%; /* Circular profile image */
+}
+
+/* Content Area (for search bar and movies) */
+.content {
+  margin-left: 120px; /* Adds space for the sidebar */
+  padding: 20px;
+}
+
+.search-bar {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between input and button */
+  max-width: 600px; /* Set a max width for the search bar */
+  margin: 20px auto; /* Center the search bar horizontally with margin */
+  padding: 10px; /* Add some padding */
+  border: 1px solid #10141e; /* Light border for the search bar */
+  border-radius: 25px; /* Rounded corners */
+  background-color: #10141e; /* Light background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.search-bar input[type="text"] {
+  flex: 1; /* Allow input to take available space */
+  border: none; /* Remove default border */
+  outline: none; /* Remove outline on focus */
+  padding: 10px; /* Padding inside the input */
+  border-radius: 25px; /* Match the border radius of the search bar */
+  font-size: 16px; /* Font size for the input */
+  background-color: #10141e;
+}
+
+.search-bar button {
+  background-color: #10141e; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 25px; /* Match the border radius */
+  padding: 10px 15px; /* Padding for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.search-bar button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+
