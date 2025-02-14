@@ -1,3 +1,4 @@
+
 function SearchBar({ placeholder, onSearch }) {
   return (
     <form className="search-bar" onSubmit={(e) => {

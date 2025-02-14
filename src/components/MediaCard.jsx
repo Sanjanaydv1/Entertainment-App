@@ -1,3 +1,4 @@
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark as solidBookmark } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark as regularBookmark } from '@fortawesome/free-regular-svg-icons';
@@ -28,5 +29,4 @@ function MediaCard({
     </div>
   );
 }
-
 export default MediaCard;
