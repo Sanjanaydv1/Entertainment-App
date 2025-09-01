@@ -36,8 +36,3 @@ npm run build: Optimizes the app for production
 npm test: Launches tests (if any configured)
 
 npm run eject: Exposes full configuration (not recommended unless necessary)
-
-
-🔗 Link to the TMDB API
-
-🧠 Known issues or future improvements (if any)
