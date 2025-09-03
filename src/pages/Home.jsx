@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import SearchBar from "../components/SearchBar";
 import MediaCard from "../components/MediaCard";
 
-function Home() {
+function Home({ selectedFilter }) {
   const [trendingMedia, setTrendingMedia] = useState([]);
   const [bookmarks, setBookmarks] = useState(new Set());
   const [searchResults, setSearchResults] = useState([]);
@@ -54,7 +54,19 @@ function Home() {
     });
   };
 
-  const mediaToDisplay = searchResults.length ? searchResults : trendingMedia;
+  // Determine media to display based on search results or trending
+  let mediaToDisplay = searchResults.length ? searchResults : trendingMedia;
+
+  // Apply filtering based on selectedFilter
+  if (selectedFilter === "movies") {
+    mediaToDisplay = mediaToDisplay.filter((item) => item.media_type === "movie");
+  } else if (selectedFilter === "tv") {
+    mediaToDisplay = mediaToDisplay.filter((item) => item.media_type === "tv");
+  } else if (selectedFilter === "bookmarks") {
+    mediaToDisplay = mediaToDisplay.filter((item) => bookmarks.has(item.id));
+  } else if (selectedFilter === "all") {
+    // Show all (no additional filtering)
+  }
 
   if (isLoading) return <p className="loading">Loading...</p>;
   if (error) return <p className="error">{error}</p>;
