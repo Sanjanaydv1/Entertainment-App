@@ -166,6 +166,15 @@ body {
   box-shadow: 0 0 5px rgba(229,9,20,0.7);
 }
 
+.sidebar .profile-icon {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: #333;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Content Area (for search bar and movies) */
 .content {
   margin-left: 120px; /* Adds space for the sidebar */
@@ -179,7 +188,7 @@ body {
   max-width: 600px; /* Set a max width for the search bar */
   margin: 20px auto; /* Center the search bar horizontally with margin */
   padding: 10px; /* Add some padding */
-  border: 1px solid #10141e; /* Light border for the search bar */
+  border: 1px solid #e9ecf5; /* Light border for the search bar */
   border-radius: 25px; /* Rounded corners */
   background-color: #10141e; /* Light background color */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -193,6 +202,9 @@ body {
   border-radius: 25px; /* Match the border radius of the search bar */
   font-size: 16px; /* Font size for the input */
   background-color: #10141e;
+  &:hover {
+    background-color: #1a1c29; /* Slightly darker on hover */
+  }
 }
 
 .search-bar button {
@@ -206,7 +218,7 @@ body {
 }
 
 .search-bar button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color:  #151d31; /* Darker shade on hover */
 }
 
 
